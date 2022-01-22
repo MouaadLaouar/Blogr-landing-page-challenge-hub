@@ -56,32 +56,24 @@ header .NavBar .menu {
   transition: all 0.7s ease-in;
 }
 
-header .NavBar .menu ul {
+header .NavBar .menu ul:nth-child(1) {
   list-style: none;
+  width: 100%;
 }
 
-header .NavBar .menu ul .sign-up {
-  color: #fff;
-  background-image: -webkit-gradient(linear, left top, right top, from(#ff8f70), to(#ff3d54));
-  background-image: linear-gradient(to right, #ff8f70, #ff3d54);
-  padding: 5px 20px;
-  border-radius: 20px;
-  margin-bottom: 10px;
-  max-width: 100px;
-}
-
-header .NavBar .menu ul .sign-up :hover {
-  background-color: #c8c8cb;
-}
-
-header .NavBar .menu ul li {
+header .NavBar .menu ul:nth-child(1) li {
   padding: 10px 0px;
   text-align: center;
   cursor: pointer;
   margin: 0px 20px;
 }
 
-header .NavBar .menu ul li > ul {
+header .NavBar .menu ul:nth-child(1) li span::after {
+  content: url(../images/icon-arrow-dark.svg);
+  margin-left: 5px;
+}
+
+header .NavBar .menu ul:nth-child(1) li ul {
   display: none;
   margin-top: 10px;
   background-color: #c8c8cb;
@@ -91,18 +83,37 @@ header .NavBar .menu ul li > ul {
   transition: all 0.5s ease-in;
 }
 
-header .NavBar .menu ul li > ul ol {
+header .NavBar .menu ul:nth-child(1) li ul ol {
   margin: 5px 0px;
-}
-
-header .NavBar .menu ul:nth-child(1) {
-  width: 100%;
 }
 
 header .NavBar .menu hr {
   width: 90%;
   color: #4b5862;
   margin: 10px 0px;
+}
+
+header .NavBar .menu ol {
+  list-style: none;
+  text-align: center;
+}
+
+header .NavBar .menu ol #sign-up {
+  margin-top: 10px;
+  color: #fff;
+  background-image: -webkit-gradient(linear, left top, right top, from(#ff8f70), to(#ff3d54));
+  background-image: linear-gradient(to right, #ff8f70, #ff3d54);
+  padding: 5px 20px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  max-width: 100px;
+  cursor: pointer;
+}
+
+header .NavBar .menu ol #sign-up:hover {
+  color: #ff3d54;
+  background-image: none;
+  background-color: #c8c8cb;
 }
 
 header .NavBar .active {
@@ -159,6 +170,7 @@ header .Hero ul li {
   margin: 10px;
   padding: 10px;
   border-radius: 20px;
+  cursor: pointer;
 }
 
 header .Hero ul :nth-child(1) {
@@ -166,24 +178,22 @@ header .Hero ul :nth-child(1) {
   background-color: #fff;
 }
 
+header .Hero ul :nth-child(1):hover {
+  color: #fff;
+  background-color: #c8c8cb;
+}
+
 header .Hero ul :nth-child(2) {
   color: #fff;
   border: solid 1px;
 }
 
+header .Hero ul :nth-child(2):hover {
+  color: #ff3d54;
+  background-color: #fff;
+}
+
 .Hero-2 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-item-align: center;
-      align-self: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   padding-top: 100px;
   text-align: center;
 }
@@ -193,18 +203,6 @@ header .Hero ul :nth-child(2) {
 }
 
 .Hero-2 div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-item-align: center;
-      align-self: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   text-align: center;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -216,18 +214,6 @@ header .Hero ul :nth-child(2) {
 }
 
 .Hero-2 div .Content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-item-align: center;
-      align-self: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   margin: 0px 30px;
 }
 
@@ -308,7 +294,6 @@ header .Hero ul :nth-child(2) {
 
 .Hero-4 img {
   max-width: 100%;
-  display: none;
 }
 
 .Hero-4 div {
@@ -361,4 +346,167 @@ footer ul {
 footer ul li {
   margin: 10px 0px;
   color: #c8c8cb;
+}
+
+@media only screen and (min-width: 650px) {
+  footer {
+    text-align: unset;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-left: 100px;
+  }
+  footer img {
+    height: 30px;
+  }
+  footer .menu-footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: 20px;
+  }
+  footer .menu-footer nav {
+    margin: 0px 20px;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .Hero-4 {
+    -webkit-box-orient: unset;
+    -webkit-box-direction: unset;
+        -ms-flex-direction: unset;
+            flex-direction: unset;
+  }
+  .Hero-4 img {
+    float: right;
+    position: relative;
+    left: -16%;
+  }
+  .Hero-4 div {
+    position: relative;
+    right: 50px;
+    max-width: 400px;
+  }
+  .Hero-4 div nav {
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 950px) {
+  header .NavBar {
+    max-width: 1000px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0px 30px;
+    height: 10%;
+  }
+  header .NavBar .logo {
+    margin-left: 25px;
+  }
+  header .NavBar .menu {
+    -webkit-box-orient: unset;
+    -webkit-box-direction: unset;
+        -ms-flex-direction: unset;
+            flex-direction: unset;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: static;
+    background-color: unset;
+    margin: 0;
+    top: 0%;
+    min-height: unset;
+    right: unset;
+    left: unset;
+    width: 100%;
+  }
+  header .NavBar .menu ul:nth-child(1) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  header .NavBar .menu ul:nth-child(1) li {
+    padding: 0px 0px;
+  }
+  header .NavBar .menu ul:nth-child(1) li ul {
+    position: absolute;
+    padding: 10px 20px;
+  }
+  header .NavBar .menu ul:nth-child(1) li ul ol {
+    margin: 10px 0px;
+  }
+  header .NavBar .menu ol {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header .NavBar .menu ol li {
+    margin: 0px 20px;
+  }
+  header .NavBar .menu ol #sign-up {
+    margin: 0;
+    width: 100px;
+  }
+  header .NavBar hr {
+    display: none;
+  }
+  header .NavBar #hamburger {
+    display: none;
+  }
+  .Hero-2 {
+    padding-top: 50px;
+  }
+  .Hero-2 div {
+    text-align: unset;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    height: 40vh;
+  }
+  .Hero-2 div img {
+    position: relative;
+    height: 600px;
+    width: 600px;
+  }
+  .Hero-2 div .Content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .Hero-2 div .Content div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-item-align: center;
+        align-self: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: left;
+  }
+  footer .menu-footer nav {
+    margin: 0px 80px;
+  }
 }
