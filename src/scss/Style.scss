@@ -1,0 +1,311 @@
+@import './variable';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
+}
+
+header {
+    background-color: hsl(353, 100%, 62%);
+    background-image: url('../images/bg-pattern-intro-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: 1000px;
+    background-position: center;
+    border-radius: 0px 0px 0px 100px;
+    height: 70vh;
+
+    .NavBar {
+        height: 20%;
+        padding: 30px;
+        display: flex;
+        justify-content: space-between;
+
+        .logo {
+            height: 30px;
+        }
+
+
+        .menu {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            position: absolute;
+            background-color: #fff;
+            min-height: 200px;
+            margin: 20px;
+            top: -30%;
+            left: 5%;
+            right: 5%;
+            border-radius: 5px;
+            transition: all 0.5s ease-in;
+
+            
+            ul {
+                list-style: none;
+                
+
+                .sign-up {
+                    color: #fff;
+                    background-image: linear-gradient(to right, $Very-light-red, $Light-red);
+                    padding: 5px 20px;
+                    border-radius: 20px;
+                    margin-bottom: 10px;
+                    max-width: 100px;
+
+                    :hover {
+                        background-color: $Grayish-blue;
+                    }
+                }
+
+                
+
+
+                li {
+                    padding: 10px 0px;
+                    text-align: center;
+                    cursor: pointer;
+                    margin: 0px 20px;
+                    
+                }
+
+
+                li > ul {
+                    display: none;
+                    margin-top: 10px;
+                    background-color: $Grayish-blue;
+                    padding: 5px 0px;
+                    border-radius: 5px;
+                    transition: all 0.5s ease-in;
+
+                    
+
+                    ol {
+                        margin: 5px 0px;
+                    }
+                }
+                
+
+               
+            }
+
+            ul:nth-child(1) {
+                width: 100%;
+            }
+
+            hr {
+                width: 90%;
+                color: $Very-dark-grayish-blue;
+                margin: 10px 0px;
+            }
+
+        }
+
+        .active {
+            top: 8%;
+        }
+
+        #hamburger {
+            height: 35px;
+            width: 30px;
+            padding: 5px 0px;
+            cursor: pointer;
+        }
+    }
+
+    .Hero {
+        height: 80%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+
+        h1 {
+            color: #fff;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: $Grayish-blue;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+
+            li {
+                margin: 10px;
+                padding: 10px;
+                border-radius: 20px;
+            }
+
+            :nth-child(1) {
+                color: hsl(353, 100%, 62%);
+                background-color: #fff;
+            }
+
+            :nth-child(2) {
+                color: #fff;
+                border: solid 1px;
+            }
+        }
+    }
+}
+
+.Hero-2 {
+    @include center();
+    padding-top: 100px;
+    text-align: center;
+
+    h1 {
+        margin-bottom: 20px;
+    }
+
+    div {
+        @include center();
+        text-align: center;
+        box-sizing: border-box;
+
+        img {
+            margin-bottom: 20px;
+            max-width: 350px;
+        }
+
+        .Content {
+            @include center();
+            margin: 0px 30px;
+            
+            div {
+                //padding: 0px 20px;
+
+                h1 {
+                    font-size: 30px;
+                    color: $Very-dark-blue;
+                }
+
+                p {
+                    color: $Very-dark-grayish-blue;
+                }
+            }
+
+            div:nth-child(2) {
+                margin-top: 20px;
+            }
+
+        }
+
+    }
+}
+
+.Hero-3 {
+    margin-top: 300px;
+    background-color: $Very-dark-blue;
+    background-image: url('../images/bg-pattern-circles.svg');
+    background-position: center -100%;
+    background-repeat: no-repeat;
+    background-size: 500px;
+    border-radius: 0px 90px 0px 90px;
+    height: 80vh;
+    @include center();
+    box-sizing: border-box;
+    text-align: center;
+
+    img {
+        position: relative;
+        top: -30%;
+    }
+
+    div {
+        position: relative;
+        top: -20%;
+        text-align: center;
+        padding: 0px 30px;
+
+        h1 {
+            font-size: 40px;
+            color: $White;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: $Grayish-blue;
+        }
+    }
+
+}
+
+.Hero-4 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+
+    img {
+        max-width: 100%;
+        display: none;
+    }
+
+    div {
+        padding: 0px 20px;
+        
+        nav {
+            text-align: center;
+            h1 {
+                font-size: 25px;
+                margin-bottom: 20px;
+            }
+
+            p {
+                color: $Very-dark-grayish-blue;
+            }
+        }
+
+        nav:nth-child(2) {
+            margin-top: 20px;
+        }
+    }
+}
+
+footer {
+    margin-top: 100px;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    background-color: $Very-dark-black-blue;
+    text-align: center;
+    border-radius: 0px 80px 0px 0px;
+
+    img {
+        margin-bottom: 30px;
+    }
+
+    nav {
+        margin: 30px 0px ;
+    }
+
+    b {
+        color: $White;
+    }
+
+    ul {
+        margin-top: 20px;
+        list-style: none;
+        li {
+            margin: 10px 0px;
+            color: $Grayish-blue;
+        }
+    }
+}
